@@ -1,0 +1,7 @@
+extension .X.dat
+prompt nodpt>
+dataprompt dist
+symbol ndist
+symbol_default 2
+symbol_type i
+symbol_text t

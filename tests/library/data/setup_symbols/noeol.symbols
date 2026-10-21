@@ -1,0 +1,6 @@
+extension .NOEOL.dat
+prompt noeol>
+symbol a1
+symbol_default 7
+symbol_type i
+symbol_text no newline at the end

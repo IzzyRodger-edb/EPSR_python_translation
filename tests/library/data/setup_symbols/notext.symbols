@@ -1,0 +1,6 @@
+extension .X.dat
+prompt notext>
+symbol abc
+symbol_default 1
+symbol_type i
+symbol_default 2

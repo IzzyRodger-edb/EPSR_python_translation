@@ -1,0 +1,10 @@
+extension    .NONDIST.dat   trailing words
+prompt nondist>
+   symbol   nsumt
+symbol_default -1
+symbol_type i
+symbol_text Number of configurations already accumulated
+symbol ncoeffs
+symbol_default 1
+symbol_type i
+symbol_text no. of coefficients

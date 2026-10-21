@@ -1,0 +1,5 @@
+prompt noext>
+symbol a
+symbol_default 1
+symbol_type i
+symbol_text t

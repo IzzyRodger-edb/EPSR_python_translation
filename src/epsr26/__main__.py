@@ -1,3 +1,3 @@
-from epsr26.shell.epsrshell import main
+from epsr26.shell.epsrshell import entry
 
-main()
+entry()

@@ -1,0 +1,6 @@
+extension .X.dat
+prompt nodp>
+symbol ndist
+symbol_default 1
+symbol_type i
+symbol_text t

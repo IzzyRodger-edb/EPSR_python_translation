@@ -1,0 +1,4 @@
+extension .X.dat
+prompt eof>
+symbol abc
+symbol_default 1

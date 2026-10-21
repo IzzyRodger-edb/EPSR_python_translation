@@ -8,7 +8,8 @@ Statements that are not part of the standard table pattern are copied into
 the `notes` field so that the Rust tool code can reproduce them.
 """
 
-import re, sys, os
+import re
+import os
 
 here = os.path.dirname(os.path.abspath(__file__))
 src_path = os.path.join(here, "../../fortran_src/setup_symbols_generic.f")

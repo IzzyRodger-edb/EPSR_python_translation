@@ -1,0 +1,29 @@
+extension .NDIST_EXAMPLE.dat
+prompt setup example>
+dataprompt ndist_example
+dataprompttext   ndist_example text, nice
+
+symbol fnameato
+symbol_default <undefined>
+symbol_type  c               
+symbol_text  A nice description
+
+symbol averyverylongsymbolname
+symbol_text Text first, then type and default
+symbol_type real
+symbol_default 2.5    3.5
+
+symbol ndist
+symbol_default 3
+symbol_type i               
+symbol_text Number of distributions/variable sets to calculate over
+
+symbol atom1
+symbol_default XXX
+symbol_type c               
+symbol_text Atom1 label
+
+symbol rmin
+symbol_default 2.0
+symbol_type r               
+symbol_text Minimum distance                  to be considered bound (13+ blanks stop the parse)

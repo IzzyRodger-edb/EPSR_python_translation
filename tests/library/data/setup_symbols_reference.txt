@@ -1,0 +1,1271 @@
+=== changeato
+n     42    42    30    12     1     5
+prompt     10 |changeato>|
+dataprompt      4 |atom|
+dataprompttext |jumps to the specified atom type number|
+extinp      4 |.ato|
+   1   0 bond       |c|n|n|Intra-molecular bond lengths. Type y to action.|
+   2   0 label      |c|n|n|Change atom labels. Type y to action.|
+   3   0 tether     |c|n|n|To change tethered status of specified molecule types. Type y to action.|
+   4   0 remove     |c|n|n|Remove specified molecule types. Type y to action.|
+   5   0 rho        |r|0.1|0.1|Density of this .ato file. [atoms/A**3]|
+   6   0 temp       |r|300|300|Temperature of this .ato file.|
+   7   0 tol        |r|0.1|0.1|Weighting for tethered atoms|
+   8   0 stepmi     |r|0.1|0.1|Intramolecular translation step.|
+   9   0 stepri     |r|1.0|1.0|Intramolecular rotation step.|
+  10   0 stepr      |r|1.0|1.0|Intermolecular rotation step.|
+  11   0 stepm      |r|0.2|0.2|Intermolecular translation step.|
+  12   0 vibtemp    |r|65|65|Vibrational energy weight [65].|
+  13   0 angtemp    |r|1.0|1.0|Requested bond angle energy weight [3.0].|
+  14   0 dihtemp    |r|10.0|10.0|Requested dihedral energy weight [10.0].|
+  15   0 ecore      |r|0.0|0.0|Energy parameter for non-bonded intramolecular correlations|
+  16   0 dcore      |r|0.0|0.0|Distance parameter for non-bonded intramolecular correlations|
+  17   0 box        |c|cubic|cubic|Shape of simulation box - [cubic] or [noncubic] or [change]|
+  18   0 findmols   |c|n|n|Generate molecules from atoms? Type y.|
+  19   0 getmolfs   |c|n|n|Generate .mol files from atoms? Type y.|
+  20   0 addbond    |c|n|n|Create a new intra-molecular bond? Type y.|
+  21   0 removebond |c|n|n|Remove an intra-molecular bond? Type y.|
+  22   0 add_w_rot  |c|n|n|Add a WHOLE molecule rotational group? Type y.|
+  23   0 axisshift  |c|n|n|Shift molecules of one type along specified axis? Type y.|
+  24   0 axisrotate |c|n|n|Rotate molecules of one type around specified axis? Type y.|
+  25   0 alignmole  |c|n|n|Align molecules along specified axis? Type y.|
+  26   0 setimage   |c|n|n|Set an image atom for specified molecule? Type y.|
+  27   0 unsetimage |c|n|n|Unset an image atom for specified molecule? Type y.|
+  28   0 removerot  |c|n|n|Remove a rotational group? Type y.|
+  29   1 natomtypes |i|1|1|Number of atom types in this file - set by .ato file|
+  30   0 molscalefc |c|n|n|Generate molecular scale factors. Type y to action.|
+  31   0 atlabel    |c|||Atom label in .ato file|
+  32   0 epsilon    |r|0.65|0.65|Lennard-Jones epsilon [kJ/mol].|
+  33   0 sigma      |r|3.0|3.0|Lennard-Jones sigma [A].|
+  34   0 atmass     |r|12|12|Atomic mass [amu].|
+  35   0 charge     |r|0.0|0.0|Coulomb charge [e].|
+  36   0 qradius    |r|0.0|0.0|Radius of charge distribution [A].|
+  37   0 atsymbol   |c|XXX|XXX|Chemical symbol for this component.|
+  38   0 iexchange  |i|-1|-1|= 1 if atom exchanges with other atoms, else 0.|
+  39   0 natomsph   |r|1.0|1.0|No. of atoms represented by sphere (1.0).|
+  40   0 radminsph  |r|0.0|0.0|Minimum radius for coarse graining [A] (0.0).|
+  41   0 radmaxsph  |r|0.0|0.0|Maximum radius for coarse graining [A] (0.0).|
+  42   0 cgmolfac   |r|1.0|1.0|Coarse graining factor for this type of atom (1.0).|
+=== partials
+   1 fnameato    <undefined>                   
+   2 nz          300                           
+   3 rnormalise  1.0                           
+   4 nsumt       -1                            
+   5 atom-c      *                             
+   6 atom-z      *                             
+   7 atom-r      *                             
+   8 ndist       1                             
+n      8     8     8     0     1     5
+prompt     15 |setup partials>|
+dataprompt      7 |partial|
+dataprompttext |jumps to the specified cluster|
+extinp     13 |.PARTIALS.dat|
+   1   0 fnameato   |c|<undefined>|<undefined>|Name of .ato file|
+   2   0 nz         |i|300|300|Number of r values [max: 1000]|
+   3   0 rnormalise |r|1.0|1.0|Controls the r- or z-range of distribution [1.0]|
+   4   0 nsumt      |i|-1|-1|Number of configurations already accumulated|
+   5   0 atom-c     |c|*|*|Centre atom type [*]|
+   6   0 atom-z     |c|*|*|Centre atom type for rho-z [*]|
+   7   0 atom-r     |c|*|*|Centre atom type for rho-r [*]|
+   8   1 ndist      |i|1|1|Number of site-site distributions|
+=== coord
+   1 fnameato    <undefined>                   
+   2 nsize       200                           
+   3 nsumt       -1                            
+   4 atom-c      *                             
+   5 atom-z      *                             
+   6 atom-r      *                             
+   7 ndist       1                             
+   8 atom1       XXX                           
+   9 atom2       XXX                           
+  10 rmin        1                             
+  11 rmax        2                             
+  12 rminrmaxc   1 2                           
+n     12    12     7     5     1     5
+prompt     12 |setup coord>|
+dataprompt     12 |distribution|
+dataprompttext |jumps to the specified distribution|
+extinp     10 |.COORD.dat|
+   1   0 fnameato   |c|<undefined>|<undefined>|Name of .ato file|
+   2   0 nsize      |i|200|200|Maximum coordination number (max 200)|
+   3   0 nsumt      |i|-1|-1|Number of configurations already accumulated|
+   4   0 atom-c     |c|*|*|Centre atom type [*]|
+   5   0 atom-z     |c|*|*|Centre atom type for rho-z [*]|
+   6   0 atom-r     |c|*|*|Centre atom type for rho-r [*]|
+   7   0 ndist      |i|1|1|Number of coordination number distributions|
+   8   0 atom1      |c|XXX|XXX|Atom type 1 to define a coordination number|
+   9   0 atom2      |c|XXX|XXX|Atom type 2 to define a coordination number|
+  10   0 rmin       |r|1|1|Minimum distance for this bond|
+  11   0 rmax       |r|2|2|Maximum distance for this bond|
+  12   0 rminrmaxc  |r|1 2|1 2|Minimum and maximum distance for atom 2 from atom c|
+=== clusters
+   1 fnameato    <undefined>                   
+   2 nsize       5000                          
+   3 nsumt       -1                            
+   4 ndist       1                             
+   5 atom1       XXX                           
+   6 atom2       XXX                           
+   7 rmin        1                             
+   8 rmax        2                             
+n      8     8     4     4     1     5
+prompt     15 |setup clusters>|
+dataprompt      7 |cluster|
+dataprompttext |Specifies a cluster|
+extinp     13 |.CLUSTERS.dat|
+   1   0 fnameato   |c|<undefined>|<undefined>|Name of .ato file|
+   2   0 nsize      |i|5000|5000|Maximum cluster size|
+   3   0 nsumt      |i|-1|-1|Number of configurations already accumulated|
+   4   0 ndist      |i|1|1|Number of cluster distributions|
+   5   0 atom1      |c|XXX|XXX|Atom type 1 to define a bond|
+   6   0 atom2      |c|XXX|XXX|Atom type 2 to define a bond|
+   7   0 rmin       |r|1|1|Minimum distance for this bond|
+   8   0 rmax       |r|2|2|Maximum distance for this bond|
+=== rings
+   1 fnameato    <undefined>                   
+   2 nsize                 25                  
+   3 nsumt       -1                            
+   4 ndist       1                             
+   5 atom1       XXX                           
+   6 atom2       XXX                           
+   7 atom3       XXX                           
+   8 rmin12      1                             
+   9 rmax12      2                             
+  10 rmin13      1                             
+  11 rmax13      2                             
+  12 rmin23      1                             
+  13 rmax23      2                             
+  14 ang213min   0.0                           
+  15 ang213max   180.0                         
+n     15    15     4    11     1     5
+prompt     12 |setup rings>|
+dataprompt      4 |ring|
+dataprompttext |jumps to the specified ring|
+extinp     10 |.RINGS.dat|
+   1   0 fnameato   |c|<undefined>|<undefined>|Name of .ato file|
+   2   0 nsize      |i|          25|          25|Maximum ring length (max 25)|
+   3   0 nsumt      |i|-1|-1|Number of configurations already accumulated|
+   4   0 ndist      |i|1|1|Number of ring distributions|
+   5   0 atom1      |c|XXX|XXX|Atom type 1 for first atom in first molecule|
+   6   0 atom2      |c|XXX|XXX|Atom type 2 for second atom in first molecule|
+   7   0 atom3      |c|XXX|XXX|Atom type 3 for atom in second molecule|
+   8   0 rmin12     |r|1|1|Minimum distance for atom1-atom2|
+   9   0 rmax12     |r|2|2|Maximum distance for atom1-atom2|
+  10   0 rmin13     |r|1|1|Minimum distance for atom1-atom3|
+  11   0 rmax13     |r|2|2|Maximum distance for atom1-atom3|
+  12   0 rmin23     |r|1|1|Minimum distance for atom2-atom3|
+  13   0 rmax23     |r|2|2|Maximum distance for atom2-atom3|
+  14   0 ang213min  |r|0.0|0.0|Minimum included angle for atom2-atom1-atom3|
+  15   0 ang213max  |r|180.0|180.0|Maximum included angle for atom2-atom1-atom3|
+=== chains
+   1 fnameato    <undefined>                   
+   2 nsize                200                  
+   3 nsumt       -1                            
+   4 ndist       1                             
+   5 atom1       XXX                           
+   6 atom2       XXX                           
+   7 atom3       XXX                           
+   8 rmin12      1                             
+   9 rmax12      2                             
+  10 rmin13      1                             
+  11 rmax13      2                             
+  12 rmin23      1                             
+  13 rmax23      2                             
+  14 ang213min   0.0                           
+  15 ang213max   180.0                         
+n     15    15     4    11     1     5
+prompt     13 |setup chains>|
+dataprompt      5 |chain|
+dataprompttext |jumps to the specified chain|
+extinp     11 |.CHAINS.dat|
+   1   0 fnameato   |c|<undefined>|<undefined>|Name of .ato file|
+   2   0 nsize      |i|         200|         200|Maximum chain length (max 200)|
+   3   0 nsumt      |i|-1|-1|Number of configurations already accumulated|
+   4   0 ndist      |i|1|1|Number of chain distributions|
+   5   0 atom1      |c|XXX|XXX|Atom type 1 for first atom in first molecule|
+   6   0 atom2      |c|XXX|XXX|Atom type 2 for second atom in first molecule|
+   7   0 atom3      |c|XXX|XXX|Atom type 3 for atom in second molecule|
+   8   0 rmin12     |r|1|1|Minimum distance for atom1-atom2|
+   9   0 rmax12     |r|2|2|Maximum distance for atom1-atom2|
+  10   0 rmin13     |r|1|1|Minimum distance for atom1-atom3|
+  11   0 rmax13     |r|2|2|Maximum distance for atom1-atom3|
+  12   0 rmin23     |r|1|1|Minimum distance for atom2-atom3|
+  13   0 rmax23     |r|2|2|Maximum distance for atom2-atom3|
+  14   0 ang213min  |r|0.0|0.0|Minimum included angle for atom2-atom1-atom3|
+  15   0 ang213max  |r|180.0|180.0|Maximum included angle for atom2-atom1-atom3|
+=== lsi
+   1 fnameato    <undefined>                   
+   2 nsize                200                  
+   3 lsiminmax   -1 2                          
+   4 nsumt       -1                            
+   5 ndist       1                             
+   6 atom1       XXX                           
+   7 atom2       XXX                           
+   8 atom3       XXX                           
+   9 rmin12      1                             
+  10 rmax12      2                             
+  11 rmin13      1                             
+  12 rmax13      2                             
+  13 rmin23      1                             
+  14 rmax23      2                             
+  15 ang213min   0.0                           
+  16 ang213max   180.0                         
+  17 rtrimax     0.0                           
+  18 nbonded     0.0 0.0                       
+  19 nnonbonded  0.0 0.0                       
+  20 avbond      0.0 0.0                       
+n     20    20     5    15     1     5
+prompt     10 |setup lsi>|
+dataprompt      3 |lsi|
+dataprompttext |jumps to the specified lsi|
+extinp      8 |.LSI.dat|
+   1   0 fnameato   |c|<undefined>|<undefined>|Name of .ato file|
+   2   0 nsize      |i|         200|         200|Number of LSI values (max 200)|
+   3   0 lsiminmax  |r|-1 2|-1 2|Minimum and maximum value of LSI [-1 2]|
+   4   0 nsumt      |i|-1|-1|Number of configurations already accumulated|
+   5   0 ndist      |i|1|1|Number of chain distributions|
+   6   0 atom1      |c|XXX|XXX|Atom type 1 for first atom in first molecule|
+   7   0 atom2      |c|XXX|XXX|Atom type 2 for second atom in first molecule|
+   8   0 atom3      |c|XXX|XXX|Atom type 3 for atom in second molecule|
+   9   0 rmin12     |r|1|1|Minimum distance for atom1-atom2|
+  10   0 rmax12     |r|2|2|Maximum distance for atom1-atom2|
+  11   0 rmin13     |r|1|1|Minimum distance for atom1-atom3|
+  12   0 rmax13     |r|2|2|Maximum distance for atom1-atom3|
+  13   0 rmin23     |r|1|1|Minimum distance for atom2-atom3|
+  14   0 rmax23     |r|2|2|Maximum distance for atom2-atom3|
+  15   0 ang213min  |r|0.0|0.0|Minimum included angle for atom2-atom1-atom3|
+  16   0 ang213max  |r|180.0|180.0|Maximum included angle for atom2-atom1-atom3|
+  17   0 rtrimax    |r|0.0|0.0|Maximum atomic separation for triangle/q calculation|
+  18   0 nbonded    |r|0.0 0.0|0.0 0.0|Average number of bonded molecules per atom1|
+  19   0 nnonbonded |r|0.0 0.0|0.0 0.0|Average number of non-bonded molecules per atom1|
+  20   0 avbond     |r|0.0 0.0|0.0 0.0|Average bonded atom1-atom3 distance|
+=== sharm
+n     18    18    19    -1     1     5
+prompt     12 |Setup sharm>|
+dataprompt      0 ||
+dataprompttext ||
+extinp     10 |.SHARM.dat|
+   1   0 fnameato   |c|<undefined>|<undefined>|Name of .ato file|
+   2   0 nr         |c|100|100|Number of radius values (max 200)|
+   3   0 rmax       |r|10|10|Maximum radius for spherical harmonic coefficients|
+   4   0 nsumt      |i|0|0|Number of configurations already accumulated|
+   5   1 ncoeffs    |i|0|0|Number of coefficients (program calculates this)|
+   6   0 l1values   |i|0|0|L1 values (separated by spaces)|
+   7   0 l2values   |i|0|0|L2 values (separated by spaces)|
+   8   0 lvalues    |i|0|0|L values (separated by spaces)|
+   9   0 n1step     |i|0|0|Step in N1 values|
+  10   0 n2step     |i|0|0|Step in N2 values|
+  11   0 atom-c     |c|<undefined>|<undefined>|Central molecule - list of centre atom types|
+  12   0 axisc1     |c|<undefined>|<undefined>|First axis definition for central molecule|
+  13   0 axisc2     |c|<undefined>|<undefined>|Second axis definition for central molecule|
+  14   0 atom-s     |c|<undefined>|<undefined>|Second molecule - list of centre atom types|
+  15   0 axiss1     |c|<undefined>|<undefined>|First axis definition for second molecule|
+  16   0 axiss2     |c|<undefined>|<undefined>|Second axis definition for second molecule|
+  17   0 test       |c|notest|notest|Set phi1,theta1,chi1,phi2,theta2,phi2,thetal,phil, to perform the orientation test [notest]|
+  18   0 averagemol |c|y|y|Output average molecular coordinates for central molecule (y or no) [y]|
+=== sdf
+n     22    22    23    -1     1     5
+prompt     10 |Setup sdf>|
+dataprompt      0 ||
+dataprompttext ||
+extinp      8 |.SDF.dat|
+   1   0 fnameato   |c|<undefined>|<undefined>|Name of .ato file|
+   2   0 nr         |c|130|130|Number of radius values (max 200)|
+   3   0 rmax       |r|13|13|Maximum radius for spherical harmonic coefficients|
+   4   0 nsumt      |i|0|0|Number of configurations already accumulated|
+   5   1 ncoeffs    |i|0|0|Number of coefficients (program calculates this)|
+   6   0 l1values   |i|0|0|L1 values (separated by spaces)|
+   7   0 l2values   |i|0|0|L2 values (separated by spaces)|
+   8   0 lvalues    |i|0|0|L values (separated by spaces)|
+   9   0 n1step     |i|0|0|Step in N1 values|
+  10   0 n2step     |i|0|0|Step in N2 values|
+  11   0 atom-c     |c|<undefined>|<undefined>|List of centre atom types. First will be origin.|
+  12   0 pairdist-c |r|1|1|List of pair distances for centre molecule.|
+  13   0 fracdist-c |r|0.2|0.2|Acceptance half-width (fraction of pair distance).|
+  14   0 axisc1     |c|<undefined>|<undefined>|First axis definition for centre molecule.|
+  15   0 axisc2     |c|<undefined>|<undefined>|Second axis definition for centre molecule.|
+  16   0 atom-s     |c|<undefined>|<undefined>|List of second atom types. First will be origin.|
+  17   0 pairdist-s |r|1|1|List of pair distances for second molecule.|
+  18   0 fracdist-s |r|0.2|0.2|Acceptance half-width (fraction of pair distance).|
+  19   0 axiss1     |c|<undefined>|<undefined>|First axis definition for second molecule.|
+  20   0 axiss2     |c|<undefined>|<undefined>|Second axis definition for second molecule.|
+  21   0 test       |c|notest|notest|Set phi1,theta1,chi1,phi2,theta2,phi2,thetal,phil, to perform the orientation test [notest]|
+  22   0 averagemol |c|y|y|Output average molecular coordinates for central molecule (y or no) [y]|
+=== sdfcube
+n     11    11    12    -1     1     5
+prompt     14 |Setup sdfcube>|
+dataprompt      0 ||
+dataprompttext ||
+extinp     12 |.SDFCUBE.dat|
+   1   0 fnameato   |c|<undefined>|<undefined>|Name of .ato file|
+   2   0 mpixel     |i|20|20|Number of pixels along (half of) one axis|
+   3   0 rmax       |r|10|10|Maximum distance for spatial density function|
+   4   0 nsumt      |i|0|0|Number of configurations already accumulated|
+   5   0 atom-c     |c|<undefined>|<undefined>|Central molecule - list of centre atom types|
+   6   0 axisc1     |c|<undefined>|<undefined>|First axis definition for central molecule|
+   7   0 axisc2     |c|<undefined>|<undefined>|Second axis definition for central molecule|
+   8   0 atom-s     |c|<undefined>|<undefined>|Second molecule - list of centre atom types|
+   9   0 axiss1     |c|<undefined>|<undefined>|First axis definition for second molecule|
+  10   0 axiss2     |c|<undefined>|<undefined>|Second axis definition for second molecule|
+  11   0 averagemol |c|y|y|Output average molecular coordinates for central molecule (y or no) [y]|
+=== mapgrentropy
+   1 shcoeffs    <undefined>                   
+   2 ncoeffs                                   
+   3 ident                                     
+   4 nsmoo       0.0 0 0 0                     
+   5 mirrorsym   no                            
+   6 ntrials     10000                         
+   7 nfreq       100                           
+   8 molndens    0.0334                        
+   9 molmass     18                            
+  10 moltemp     298                           
+  11 molrot      44921.624                     
+  12 molvib      0                             
+  13 extcoeff    .SHARM.h01                    
+n     13    13    13     0     0     5
+prompt     19 |setup mapgrentropy>|
+dataprompt      4 |none|
+dataprompttext |jumps to nothing|
+extinp     17 |.mapgrentropy.dat|
+   1   0 shcoeffs   |c|<undefined>|<undefined>|Name of file containing spherical harmonic coefficients|
+   2   1 ncoeffs    |i|||no. of coefficients - determined from coefficients file|
+   3   0 ident      |i|||= 0 for identical molecules, else 1 if different|
+   4   0 nsmoo      |r|0.0 0 0 0|0.0 0 0 0|rmin and number of smoothings on coefficients on radial, spatial and orientational coeffs. [0 0 0 0]|
+   5   0 mirrorsym  |c|no|no|Apply mirror symmetry (y or no)|
+   6   0 ntrials    |i|10000|10000|Number of random trials [10000]|
+   7   0 nfreq      |i|100|100|Write frequency|
+   8   0 molndens   |r|0.0334|0.0334|Molecule no. density (mols per A**3) [0.0334]|
+   9   0 molmass    |r|18|18|Molecule mass (Da) [18]|
+  10   0 moltemp    |r|298|298|Temperature of simulation (K) [298]|
+  11   0 molrot     |r|44921.624|44921.624|Molecule rotation factor [water = 44921.624]|
+  12   0 molvib     |r|0|0|Molecule vibration factor [water = 0]|
+  13   0 extcoeff   |c|.SHARM.h01|.SHARM.h01|extension of coefficients file|
+=== plot2d
+   1 bakcolour   1                             
+   2 shcoeffs    <undefined>                   
+   3 ncoeffs                                   
+   4 ident                                     
+   5 setone      1                             
+   6 nsmoo       4                             
+   7 xdim        10                            
+   8 ydim        10                            
+   9 rmin        2.0                           
+  10 ncircles    1                             
+  11 xyzcircle   0.0 0 0                       
+  12 radcircle   1.0                           
+  13 nplotxy     1 1                           
+  14 aspect      1.0                           
+  15 use_l1_l2   1 0                           
+  16 use_n1_n2   1 0                           
+  17 use_m       0                             
+  18 nvary       1                             
+  19 ph_th_ch    0 0 0 0                       
+  20 axespar     1.5 2 0                       
+  21 plottitle                                 
+  22 titlecoord  0.1 -1.3 2                    
+  23 colour      3                             
+  24 zmin_zmax   1 5                           
+  25 contrast    1.0                           
+  26 contover    N                             
+  27 extraline   0                             
+  28 extratext   0                             
+  29 extcoeff    .SHARM.h01                    
+n     29    12    10     2     1     5
+prompt     13 |setup plot2d>|
+dataprompt      6 |circle|
+dataprompttext |jumps to the specified circle|
+extinp     11 |.plot2d.txt|
+   1   0 bakcolour  |i|1|1|Background colour index [1]|
+   2   0 shcoeffs   |c|<undefined>|<undefined>|Name of file containing SHARM coefficients|
+   3   1 ncoeffs    |i|||no. of SHARM coefficients - determined from coefficients file|
+   4   0 ident      |i|||= 0 for identical molecules, else 1 if different|
+   5   0 setone     |i|1|1|0 sets first coefficient to zero - normally 1|
+   6   0 nsmoo      |i|4|4|number of smoothings on coefficients|
+   7   0 xdim       |i|10|10|x dimension of plotting square|
+   8   0 ydim       |i|10|10|y dimension of plotting square|
+   9   0 rmin       |r|2.0|2.0|minimum radius of plot|
+  10   0 ncircles   |i|1|1|Number of circles at centre of plot (max 25)|
+  11   0 xyzcircle  |r|0.0 0 0|0.0 0 0|(x,y,z) coordinates for circle (separated by spaces)|
+  12   0 radcircle  |r|1.0|1.0|Radius of circle|
+  13   1 nplotxy    |i|1 1|1 1|no. of plots along x- and y-axis [set at 1 1]|
+  14   0 aspect     |r|1.0|1.0|aspect ratio of plot [1.0]|
+  15   0 use_l1_l2  |i|1 0|1 0|use l1 and l2 (1 or 0)|
+  16   0 use_n1_n2  |i|1 0|1 0|use n1 and n2 (1 or 0)|
+  17   0 use_m      |i|0|0|use m2 (1 or 0)|
+  18   0 nvary      |i|1|1|vary thetal (1), phil (2), phim(3), thetam(4), chim(5)|
+  19   0 ph_th_ch   |c|0 0 0 0|0 0 0 0|phil, phim, thetam, chim (degrees - separated by spaces)|
+  20   0 axespar    |r|1.5 2 0|1.5 2 0|axes character size, line width and colour (separated by spaces)|
+  21   0 plottitle  |c|||plot title|
+  22   0 titlecoord |r|0.1 -1.3 2|0.1 -1.3 2|(x,y) coords. of title, and character size (separated by spaces)|
+  23   0 colour     |i|3|3|Colour scale [2 - 8]|
+  24   0 zmin_zmax  |r|1 5|1 5|range of intensites to be plotted (separated by spaces)|
+  25   0 contrast   |r|1.0|1.0|Contrast factor [0.0 - 1.0]|
+  26   1 contover   |c|N|N|Contours overlaid? - set to N - cannot be changed|
+  27   1 extraline  |i|0|0|extra lines (0) - cannot be set|
+  28   1 extratext  |i|0|0|extra text (0) - cannot be set|
+  29   0 extcoeff   |c|.SHARM.h01|.SHARM.h01|extension of coefficients file|
+=== splot2d
+   1 shcoeffs    <undefined>                   
+   2 ncoeffs                                   
+   3 ident       0                             
+   4 nsmoo       0                             
+   5 xdim        10                            
+   6 ydim        10                            
+   7 mpixel      50                            
+   8 rmin_rmax   2.0 10                        
+   9 use_l1_l2   1 0 1                         
+  10 use_n1_n2   1 0                           
+  11 use_m       0                             
+  12 mirrorsym   no                            
+  13 nvary       1                             
+  14 ph_th_ch    0 0 0 0                       
+  15 ncolour     1                             
+  16 colourfrac  0                             
+  17 rgbvalues   1 1 1                         
+  18 ncontour    0                             
+  19 wherecont   base                          
+  20 addcons     1.0                           
+  21 surfonly    no                            
+  22 title       <undefined>                   
+  23 xlabel      x [A]                         
+  24 ylabel      y [A]                         
+  25 setgrid     no                            
+  26 smoothness  0 0                           
+  27 plotrotate  0                             
+  28 extcoeff    .SHARM.h01                    
+n     28    17    15     2     1     5
+prompt     14 |setup splot2d>|
+dataprompt      6 |colour|
+dataprompttext |jumps to the specified colour|
+extinp     12 |.splot2d.txt|
+   1   0 shcoeffs   |c|<undefined>|<undefined>|Name of file containing SHARM coefficients|
+   2   1 ncoeffs    |i|||no. of SHARM coefficients - determined from coefficients file|
+   3   0 ident      |i|0|0|= 0 for identical molecules, else 1 if different|
+   4   0 nsmoo      |i|0|0|number of smoothings on coefficients|
+   5   0 xdim       |r|10|10|x dimension of plotting square|
+   6   0 ydim       |r|10|10|y dimension of plotting square|
+   7   0 mpixel     |i|50|50|Number of pixels in each direction [50]|
+   8   0 rmin_rmax  |r|2.0 10|2.0 10|minimum radius of plot|
+   9   0 use_l1_l2  |i|1 0 1|1 0 1|use l1, l2 and l (1 or 0) [1 0 1]|
+  10   0 use_n1_n2  |i|1 0|1 0|use n1 and n2 (1 or 0)|
+  11   0 use_m      |i|0|0|use m2 (1 or 0)|
+  12   0 mirrorsym  |c|no|no|Apply mirror symmetry (y or no) [no]|
+  13   0 nvary      |i|1|1|vary thetal (1), phil (2), phim(3), thetam(4), chim(5)|
+  14   0 ph_th_ch   |c|0 0 0 0|0 0 0 0|phil, phim, thetam, chim (degrees - separated by spaces)|
+  15   0 ncolour    |i|1|1|Number of colours needed for palette [1]|
+  16   0 colourfrac |r|0|0|colour fraction (0 - 1) [0]|
+  17   0 rgbvalues  |r|1 1 1|1 1 1|RGB values for this colour fraction (separated by spaces) [1 1 1]|
+  18   0 ncontour   |i|0|0|no of contours [0]|
+  19   0 wherecont  |c|base|base|Where to put contours (surface, base, both) [base]|
+  20   0 addcons    |r|1.0|1.0|Constant to add to final reconstruction [1.0]|
+  21   0 surfonly   |c|no|no|Surface only? (y or no) [no]|
+  22   0 title      |c|<undefined>|<undefined>|Title of plot|
+  23   0 xlabel     |c|x [A]|x [A]|x-axis label|
+  24   0 ylabel     |c|y [A]|y [A]|y-axis label|
+  25   0 setgrid    |c|no|no|set grid> (y or no) [no]|
+  26   0 smoothness |i|0 0|0 0|degree of interpolation along x and y (1 1 = no interpolation, 0 0 = optimal [0 0]|
+  27   0 plotrotate |r|0|0|Rotation of plot (deg) [0]|
+  28   0 extcoeff   |c|.SHARM.h01|.SHARM.h01|extension of coefficients file|
+=== plot3d
+   1 shcoeffs    <undefined>                   
+   2 ncoeffs                                   
+   3 ident                                     
+   4 setone      1                             
+   5 nsmoo       4                             
+   6 radmax      5                             
+   7 nplotxy     1 1                           
+   8 aspect      1.0                           
+   9 rmin_rmax   2.0 5.0                       
+  10 surfra      0.15                          
+  11 use_l1_l2   1 0                           
+  12 use_n1_n2   1 0                           
+  13 use_m       0                             
+  14 nvary       1                             
+  15 ph_th_ch    0 0 0                         
+  16 nsphere     1                             
+  17 radsphere   1.0                           
+  18 rthetaphi   0.0 0 0                       
+  19 rgbsph      0.7 0.7 0.7                   
+  20 axespar     1.5 2 0                       
+  21 plottitle                                 
+  22 titlecoord  0.1 -1.3 2                    
+  23 blank                                     
+  24 rgbbak      0.8 0.8 1.0                   
+  25 ishade      -1                            
+  26 rgbobj      1 1 0                         
+  27 lightcoord  2 2 0                         
+  28 fadefc      1.0                           
+  29 itrans      0                             
+  30 appearance  1.0 0.0 1.0 1.0               
+  31 rotelev     15 35                         
+  32 extraline   0                             
+  33 extratext   0                             
+  34 extcoeff    .SHARM.h01                    
+n     34    19    16     3     1     5
+prompt     13 |setup plot3d>|
+dataprompt      6 |sphere|
+dataprompttext |jumps to the specified sphere|
+extinp     11 |.plot3d.txt|
+   1   0 shcoeffs   |c|<undefined>|<undefined>|Name of file containing spherical harmonic coefficients|
+   2   1 ncoeffs    |i|||no. of coefficients - determined from coefficients file|
+   3   0 ident      |i|||= 0 for identical molecules, else 1 if different|
+   4   0 setone     |i|1|1|0 sets first coefficient to zero - normally 1|
+   5   0 nsmoo      |i|4|4|number of smoothings on coefficients|
+   6   0 radmax     |r|5|5|maximum radius of plotting box|
+   7   0 nplotxy    |i|1 1|1 1|no. of plots along x- and y-axis [set at 1 1]|
+   8   0 aspect     |r|1.0|1.0|aspect ratio of plot [1.0]|
+   9   0 rmin_rmax  |r|2.0 5.0|2.0 5.0|minimum and maximum radius of plot|
+  10   0 surfra     |r|0.15|0.15|fractional isosurface level (-ve for absolute)|
+  11   0 use_l1_l2  |i|1 0|1 0|use l1 and l2 (1 or 0)|
+  12   0 use_n1_n2  |i|1 0|1 0|use n1 and n2 (1 or 0)|
+  13   0 use_m      |i|0|0|use m2 (1 or 0)|
+  14   0 nvary      |i|1|1|vary (thetal, phil) (1), (thetam, phim) (2), (thetam, chim) (3)|
+  15   0 ph_th_ch   |c|0 0 0|0 0 0|phim, thetam, chim (degrees - separated by spaces|
+  16   0 nsphere    |i|1|1|number of spheres at centre of plot (max 25)|
+  17   0 radsphere  |r|1.0|1.0|radius of sphere|
+  18   0 rthetaphi  |r|0.0 0 0|0.0 0 0|(r,theta,phi) coordinates for sphere (separated by spaces)|
+  19   0 rgbsph     |r|0.7 0.7 0.7|0.7 0.7 0.7|red green blue fractions for sphere (separated by spaces)|
+  20   0 axespar    |r|1.5 2 0|1.5 2 0|axes character size, line width and colour (separated by spaces)|
+  21   0 plottitle  |c|||plot title|
+  22   0 titlecoord |r|0.1 -1.3 2|0.1 -1.3 2|(x,y) coords. of title, and character size (separated by spaces)|
+  23   1 blank      |c|||A blank line required by plotting program|
+  24   0 rgbbak     |r|0.8 0.8 1.0|0.8 0.8 1.0|red green blue fractions for background (separated by spaces)|
+  25   0 ishade     |i|-1|-1|ishade (1-8): 0 means no shading, -ve means inverted shading|
+  26   0 rgbobj     |r|1 1 0|1 1 0|red green blue fractions for object (separated by spaces)|
+  27   0 lightcoord |i|2 2 0|2 2 0|(x,y,z) coordinates for light source (separated by spaces)|
+  28   0 fadefc     |r|1.0|1.0|fade factor (0 = no fading, 1=full fading)|
+  29   0 itrans     |i|0|0|transparency of object (0=0%,1=25%,2=50%,3=75%)|
+  30   0 appearance |r|1.0 0.0 1.0 1.0|1.0 0.0 1.0 1.0|difuse, shine, polish and contrast|
+  31   0 rotelev    |r|15 35|15 35|rotation and elevation of viewing point (deg.)|
+  32   1 extraline  |i|0|0|extra lines (0) - cannot be set|
+  33   1 extratext  |i|0|0|extra text (0) - cannot be set|
+  34   0 extcoeff   |c|.SHARM.h01|.SHARM.h01|extension of coefficients file|
+=== plot3djmol
+   1 shcoeffs    <undefined>                   
+   2 ncoeffs                                   
+   3 ident       1                             
+   4 setone      0                             
+   5 nsmoo       4                             
+   6 radmax      5                             
+   7 mpixel      20                            
+   8 rmin_rmax   2.0 5.0                       
+   9 surfra      0.15                          
+  10 use_l1_l2   1 0 1                         
+  11 use_n1_n2   1 0                           
+  12 use_m       0                             
+  13 mirrorsym   no                            
+  14 nvary       1                             
+  15 ph_th_ch    0 0 0                         
+  16 nsphere     1                             
+  17 chsymbol    C                             
+  18 rthetaphi   0.0 0.0 0.0                   
+  19 rgbbak      0.8 0.8 1.0                   
+  20 rgbobj      1 1 0                         
+  21 itrans      0                             
+  22 imesh       0                             
+  23 rotelev     0 0                           
+  24 scalefact   1.0                           
+  25 tlucency    0.5                           
+  26 rotatemol   y                             
+  27 spin        off                           
+  28 nextfile    <none>                        
+  29 extcoeff    .SHARM.h01                    
+n     29    18    16     2     1     5
+prompt     17 |setup plot3djmol>|
+dataprompt      6 |sphere|
+dataprompttext |jumps to the specified sphere|
+extinp      9 |.CUBE.txt|
+   1   0 shcoeffs   |c|<undefined>|<undefined>|Name of file containing spherical harmonic coefficients|
+   2   1 ncoeffs    |i|||no. of coefficients - determined from coefficients file|
+   3   0 ident      |i|1|1|0 for identical molecules, else 1 if different - determined from SHARM/SDF.dat file|
+   4   0 setone     |i|0|0|Central molecule: show all central molecule atoms (0), SHARM/SDF construct (1), or spheres (2) [1]|
+   5   0 nsmoo      |i|4|4|number of smoothings on coefficients [4]|
+   6   0 radmax     |r|5|5|maximum radius of plotting box [5]|
+   7   0 mpixel     |i|20|20|no. of pixels per axis [20]|
+   8   0 rmin_rmax  |r|2.0 5.0|2.0 5.0|minimum and maximum radius of plot|
+   9   0 surfra     |r|0.15|0.15|fractional isosurface level (-ve for absolute)|
+  10   0 use_l1_l2  |i|1 0 1|1 0 1|use l1, l2 and l (1 or 0) [1 0 1]|
+  11   0 use_n1_n2  |i|1 0|1 0|use n1 and n2 (1 or 0)|
+  12   0 use_m      |i|0|0|use m2 (1 or 0)|
+  13   0 mirrorsym  |c|no|no|apply mirror symmetry (y or no)|
+  14   0 nvary      |i|1|1|vary (thetal, phil) (1), (thetam, phim) (2), (thetam, chim) (3)|
+  15   0 ph_th_ch   |c|0 0 0|0 0 0|phim, thetam, chim (degrees - separated by spaces|
+  16   0 nsphere    |i|1|1|number of spheres at centre of plot|
+  17   0 chsymbol   |c|C|C|chemical symbol|
+  18   0 rthetaphi  |r|0.0 0.0 0.0|0.0 0.0 0.0|atomic position (r,theta,phi, separated by spaces)|
+  19   0 rgbbak     |r|0.8 0.8 1.0|0.8 0.8 1.0|red green blue fractions for background (separated by spaces)|
+  20   0 rgbobj     |r|1 1 0|1 1 0|red green blue fractions for surface (separated by spaces)|
+  21   0 itrans     |i|0|0|transparency of surface (0=opaque, 1=translucent, 2=transparent)|
+  22   0 imesh      |i|0|0|mesh (0=nomesh,1=mesh,2=dots)|
+  23   0 rotelev    |r|0 0|0 0|rotation and elevation of viewing point (deg.)[0 0]|
+  24   0 scalefact  |r|1.0|1.0|scale factor for SDF or OCF [1.0]|
+  25   0 tlucency   |r|0.5|0.5|translucency of surface (if itrans=1) (0 - 1) [0.5]|
+  26   0 rotatemol  |c|y|y|rotate central molecule if nvary > 1 (y or no) [y]|
+  27   0 spin       |c|off|off|spin picture? (x, y, z, or off) [off]|
+  28   0 nextfile   |c|<none>|<none>|Filename to create another surface [<none>]|
+  29   0 extcoeff   |c|.SHARM.h01|.SHARM.h01|extension of coefficients file|
+=== mapgr
+   1 shcoeffs    <undefined>                   
+   2 ncoeffs                                   
+   3 ident       1                             
+   4 nsmoo       0.0 0 0 0                     
+   5 mirrorsym   no                            
+   6 nviews      1                             
+   7 grtype      1                             
+   8 theta_phi   0 0 0 0 0                     
+   9 extcoeff    .SHARM.h01                    
+n      9     8     6     2     1     5
+prompt     12 |setup mapgr>|
+dataprompt      4 |view|
+dataprompttext |jumps to the specified view|
+extinp     10 |.mapgr.txt|
+   1   0 shcoeffs   |c|<undefined>|<undefined>|Name of file containing spherical harmonic coefficients|
+   2   1 ncoeffs    |i|||no. of coefficients - determined from coefficients file|
+   3   0 ident      |i|1|1|0 for identical molecules, else 1 if different - determined from SHARM/SDF.dat file|
+   4   0 nsmoo      |r|0.0 0 0 0|0.0 0 0 0|rmin and number of smoothings on coefficients on radial, spatial and orientational coeffs. [0 0 0 0]|
+   5   0 mirrorsym  |c|no|no|apply mirror symmetry (y or no)|
+   6   0 nviews     |i|1|1|number of views (directions) to calculate g(r)|
+   7   0 grtype     |i|1|1|1 = radial, 2 = spatial, 3 = full orientational|
+   8   0 theta_phi  |c|0 0 0 0 0|0 0 0 0 0|thetal, phil, phim, thetam, chim - separated by spaces)|
+   9   0 extcoeff   |c|.SHARM.h01|.SHARM.h01|extension of coefficients file|
+=== triangles
+   1 fnameato    <undefined>                   
+   2 nsize       180                           
+   3 nsumt       -1                            
+   4 atom-c      *                             
+   5 atom-z      *                             
+   6 atom-r      *                             
+   7 ndist       1                             
+   8 atom1       XXX                           
+   9 atom2       XXX                           
+  10 atom3       XXX                           
+  11 ltype       1                             
+  12 rmin12      1                             
+  13 rmax12      2                             
+  14 rmin23      1                             
+  15 rmax23      2                             
+  16 rminrmaxc   1 2                           
+n     16    16     7     9     1     5
+prompt     16 |setup triangles>|
+dataprompt      9 |triangles|
+dataprompttext |jumps to the specified triangle|
+extinp      8 |.TRI.dat|
+   1   0 fnameato   |c|<undefined>|<undefined>|Name of .ato file|
+   2   0 nsize      |i|180|180|Number of theta bins [180]|
+   3   0 nsumt      |i|-1|-1|Number of configurations already accumulated|
+   4   0 atom-c     |c|*|*|Centre atom type [*]|
+   5   0 atom-z     |c|*|*|Centre atom type for rho-z [*]|
+   6   0 atom-r     |c|*|*|Centre atom type for rho-r [*]|
+   7   0 ndist      |i|1|1|Number of tri-angle distributions|
+   8   0 atom1      |c|XXX|XXX|Atom type 1 to define a triangle|
+   9   0 atom2      |c|XXX|XXX|Atom type 2 to define a triangle|
+  10   0 atom3      |c|XXX|XXX|Atom type 3 to define a triangle|
+  11   0 ltype      |i|1|1|Single atom3 types [1], or multiple atom3 types [2]?|
+  12   0 rmin12     |r|1|1|Minimum distance for atoms 1 and 2|
+  13   0 rmax12     |r|2|2|Maximum distance for atoms 1 and 2|
+  14   0 rmin23     |r|1|1|Minimum distance for atoms 2 and 3|
+  15   0 rmax23     |r|2|2|Maximum distance for atoms 2 and 3|
+  16   0 rminrmaxc  |r|1 2|1 2|Minimum and maximum distance for atom 2 from atom c|
+=== torangles
+   1 fnameato    <undefined>                   
+   2 nsize       180                           
+   3 nsumt       -1                            
+   4 ndist       1                             
+   5 atom1       XXX                           
+   6 ltyp1       1                             
+   7 ltyp2       2                             
+   8 ltyp3       3 3                           
+   9 ltyp4       4 4                           
+n      9     9     4     5     1     5
+prompt     16 |setup torangles>|
+dataprompt      9 |torangles|
+dataprompttext |jumps to the specified torangle|
+extinp      8 |.TOR.dat|
+   1   0 fnameato   |c|<undefined>|<undefined>|Name of .ato file|
+   2   0 nsize      |i|180|180|Number of cos(theta) bins [180]|
+   3   0 nsumt      |i|-1|-1|Number of configurations already accumulated|
+   4   0 ndist      |i|1|1|Number of tri-angle distributions|
+   5   0 atom1      |c|XXX|XXX|Atom type to define which molecule type|
+   6   0 ltyp1      |i|1|1|First atom number to define the axis|
+   7   0 ltyp2      |i|2|2|Second atom number to define the axis|
+   8   0 ltyp3      |i|3 3|3 3|Two atom numbers for vector from atom 1|
+   9   0 ltyp4      |i|4 4|4 4|Two atom numbers for vector from atom 2|
+=== voids
+   1 fnameato    <undefined>                   
+   2 nsize       1000                          
+   3 npix        100                           
+   4 voidmax     500.0                         
+   5 nsumt       -1                            
+   6 ndist       1                             
+   7 radius      2                             
+   8 include                                   
+n      8     8     6     2     1     5
+prompt     12 |setup voids>|
+dataprompt      4 |void|
+dataprompttext |Specifies a void|
+extinp     10 |.VOIDS.dat|
+   1   0 fnameato   |c|<undefined>|<undefined>|Name of .ato file|
+   2   0 nsize      |i|1000|1000|No. of histogram points (max 1000)|
+   3   0 npix       |i|100|100|No. of pixels for void calculation (max 201)|
+   4   0 voidmax    |r|500.0|500.0|Maximum void volume (in multiples of atomic volume)|
+   5   0 nsumt      |i|-1|-1|Number of configurations already accumulated|
+   6   0 ndist      |i|1|1|Number of void distributions|
+   7   0 radius     |r|2|2|Average distance from atoms to define a void|
+   8   0 include    |c|||List of atom types to include|
+=== fluctuations
+   1 fnameato    <undefined>                   
+   2 nsize       1000                          
+   3 nsumt       -1                            
+   4 nsamples    1000                          
+   5 ndist       1                             
+   6 rmax        10                            
+   7 ntotal      0                             
+   8 nsqtotal    0                             
+   9 szero       0                             
+n      9     9     5     4     1     5
+prompt     19 |setup fluctuations>|
+dataprompt      4 |size|
+dataprompttext |Specifies a size to measure fluctuations|
+extinp     17 |.FLUCTUATIONS.dat|
+   1   0 fnameato   |c|<undefined>|<undefined>|Name of .ato file|
+   2   0 nsize      |i|1000|1000|No. of histogram points (max 1000)|
+   3   0 nsumt      |i|-1|-1|Number of samples already accumulated|
+   4   0 nsamples   |i|1000|1000|Number of samples to take from this configuration|
+   5   0 ndist      |i|1|1|Number of volume sizes|
+   6   0 rmax       |r|10|10|Radius of volume to probe|
+   7   0 ntotal     |r|0|0|Sum of N|
+   8   0 nsqtotal   |r|0|0|Sum of N^2|
+   9   0 szero      |r|0|0|S(0)|
+=== nwts
+   1 fnameato    <undefined>                   
+   2 output      1                             
+   3 nsamples    1                             
+   4 xfrac       0.0                           
+   5 normtot     0                             
+   6 normdif     0                             
+   7 ncomponent  1                             
+   8 atom        0                             
+   9 atsymbol    0                             
+  10 iexchange   0                             
+  11 abundances  0 1                           
+  12 isubs       0                             
+  13 abund2      0 1                           
+n     13    13     7     6     1     5
+prompt     11 |setup nwts>|
+dataprompt      9 |component|
+dataprompttext |Specifies isotopic abundances of a component|
+extinp      9 |.NWTS.dat|
+   1   0 fnameato   |c|<undefined>|<undefined>|Name of .ato file|
+   2   0 output     |i|1|1|Is the output to be per atom (1) or per molecule (2)|
+   3   0 nsamples   |i|1|1|Number of samples (1,2, or 3)|
+   4   1 xfrac      |r|0.0|0.0|Fraction of first sample in mixture|
+   5   0 normtot    |i|0|0|Normalise totals to (0 = nothing, 1 = <b>^2, 2 = <b^2>|
+   6   0 normdif    |i|0|0|Normalise first order difference (0 = no, 1 = yes)|
+   7   1 ncomponent |i|1|1|Number of components (determined from ato file)|
+   8   1 atom       |c|0|0|Atom label - set from .ato file|
+   9   1 atsymbol   |c|0|0|Atom symbol - set from .ato file|
+  10   0 iexchange  |i|0|0|1 if this atom exchanges with other atoms, 0 otherwise|
+  11   0 abundances |r|0 1|0 1|List of mass numbers and abundances. 0 for natural isotope|
+  12   1 isubs      |i|0|0|This atom isotope substituted? (1 = yes, 0 = no)|
+  13   1 abund2     |r|0 1|0 1|List of mass numbers and abundances for second sample|
+=== xwts
+   1 fnameato    <undefined>                   
+   2 output      1                             
+   3 normtot     2                             
+   4 iafformaff  1                             
+   5 ncomponent  1                             
+   6 atom        0                             
+   7 atsymbol    <undefined>                   
+   8 maffq       0                             
+   9 maffdelta   0                             
+n      9     9     5     4     1     5
+prompt     11 |setup xwts>|
+dataprompt      9 |component|
+dataprompttext |Specifies form factors for a component|
+extinp      9 |.XWTS.dat|
+   1   0 fnameato   |c|<undefined>|<undefined>|Name of .ato file|
+   2   0 output     |i|1|1|Is the output to be per atom (1) or per molecule (2)|
+   3   0 normtot    |i|2|2|Normalise totals to (0 = nothing, 1 = <b>^2, 2 = <b^2>|
+   4   0 iafformaff |i|1|1|Use the IAFFs (1) or MAFFs (2) for normalisation?|
+   5   1 ncomponent |i|1|1|Number of components (determined from ato file)|
+   6   1 atom       |c|0|0|Atom label - set from .ato file|
+   7   0 atsymbol   |c|<undefined>|<undefined>|Atom symbol to specify form factor|
+   8   0 maffq      |r|0|0|Modified atomic form factors alpha values (0)|
+   9   0 maffdelta  |r|0|0|Modified atomic form factors delta value (0)|
+=== bragginten
+   1 fnameato    <undefined>                   
+   2 mplicities  1 1 1                         
+   3 hklqmin     0.0                           
+   4 rmax        0.0                           
+   5 qstepqmax   0.001 1                       
+   6 qwidth      0.005                         
+   7 ncomponent  1                             
+   8 atom        0                             
+   9 scatlen     1.0                           
+n      9     9     7     2     1     5
+prompt     17 |setup bragginten>|
+dataprompt      9 |component|
+dataprompttext |Specifies neutron scattering length for a component|
+extinp     15 |.BRAGGINTEN.dat|
+   1   0 fnameato   |c|<undefined>|<undefined>|Name of .ato file|
+   2   0 mplicities |i|1 1 1|1 1 1|No. of unit cells along a, b and c|
+   3   0 hklqmin    |r|0.0|0.0|Minimum value of qhkl to be used|
+   4   0 rmax       |r|0.0|0.0|Maximum value of r - used to create convolution function|
+   5   0 qstepqmax  |r|0.001 1|0.001 1|Step in Q and maximum Q for output|
+   6   0 qwidth     |r|0.005|0.005|Width of broadening function|
+   7   1 ncomponent |i|1|1|Number of components (determined from ato file)|
+   8   1 atom       |c|0|0|Atom label - set from .ato file|
+   9   0 scatlen    |r|1.0|1.0|Neutron scattering length|
+=== sharm
+n     18    18    19    -1     1     5
+prompt     12 |Setup sharm>|
+dataprompt      0 ||
+dataprompttext ||
+extinp     10 |.SHARM.dat|
+   1   0 fnameato   |c|<undefined>|<undefined>|Name of .ato file|
+   2   0 nr         |c|100|100|Number of radius values (max 200)|
+   3   0 rmax       |r|10|10|Maximum radius for spherical harmonic coefficients|
+   4   0 nsumt      |i|0|0|Number of configurations already accumulated|
+   5   1 ncoeffs    |i|0|0|Number of coefficients (program calculates this)|
+   6   0 l1values   |i|0|0|L1 values (separated by spaces)|
+   7   0 l2values   |i|0|0|L2 values (separated by spaces)|
+   8   0 lvalues    |i|0|0|L values (separated by spaces)|
+   9   0 n1step     |i|0|0|Step in N1 values|
+  10   0 n2step     |i|0|0|Step in N2 values|
+  11   0 atom-c     |c|<undefined>|<undefined>|Central molecule - list of centre atom types|
+  12   0 axisc1     |c|<undefined>|<undefined>|First axis definition for central molecule|
+  13   0 axisc2     |c|<undefined>|<undefined>|Second axis definition for central molecule|
+  14   0 atom-s     |c|<undefined>|<undefined>|Second molecule - list of centre atom types|
+  15   0 axiss1     |c|<undefined>|<undefined>|First axis definition for second molecule|
+  16   0 axiss2     |c|<undefined>|<undefined>|Second axis definition for second molecule|
+  17   0 test       |c|notest|notest|Set phi1,theta1,chi1,phi2,theta2,phi2,thetal,phil, to perform the orientation test [notest]|
+  18   0 averagemol |c|y|y|Output average molecular coordinates for central molecule (y or no) [y]|
+=== generic good extra words
+
+setup_symbols_generic>  command passed in: good
+
+setup_symbols_generic>  command passed in: good extra words                                                                                                                                                                                                                                                
+
+setup_symbols_generic> Processing good.symbols
+ Found extension, extension = .NDIST_EXAMPLE.dat                                                                                                                                                                                                                                              
+ Found prompt, prompt = setup example>                                                                                                                                                                                                                                                  
+ Found dataprompt, dataprompt = ndist_example                                                                                                                                                                                                                                                   
+ Found dataprompttext, dataprompttext = ndist_example text, nice                                                                                                                                                                                                                                        
+ Found new symbol, symbol = fnameato                                                                                                                                                                                                                                                        
+ Found new symbol, symbol = averyverylongsymbolname                                                                                                                                                                                                                                         
+ Found new symbol, symbol = ndist                                                                                                                                                                                                                                                           
+
+setup_symbols_generic> Found ndist symbol, therefore allsymbols beyond this are part of each distribution.
+ Found new symbol, symbol = atom1                                                                                                                                                                                                                                                           
+ Found new symbol, symbol = rmin                                                                                                                                                                                                                                                            
+
+setup_symbols_generic>  
+ Parsed           30  lines in good.symbols
+ Found            5  symbols 
+   1 fnameato    <undefined>                                                 c
+   2 averyverylo 2.5    3.5                                                  r
+   3 ndist       3                                                           i
+   4 atom1       XXX                                                         c
+   5 rmin        2.0                                                         r
+
+setup_symbols_generic> Complete setup_symbol_generic
+
+setup_symbols_generic> -- symbols() have been setup
+ssg_ierr    0
+commands      1   257   268
+n      5     5     3     2     3     5
+prompt     14 |setup example>|
+dataprompt     13 |ndist_example|
+dataprompttext |ndist_example text, nice|
+extinp     18 |.NDIST_EXAMPLE.dat|
+   1   0 fnameato   |c|<undefined>|<undefined>|A nice description|
+   2   0 averyverylo|r|2.5    3.5|2.5    3.5|Text first, then type and default|
+   3   0 ndist      |i|3|3|Number of distributions/variable sets to calculate over|
+   4   0 atom1      |c|XXX|XXX|Atom1 label|
+   5   0 rmin       |r|2.0|2.0|Minimum distance|
+=== generic nondist
+
+setup_symbols_generic>  command passed in: nondist
+
+setup_symbols_generic>  command passed in: nondist                                                                                                                                                                                                                                                         
+
+setup_symbols_generic> Processing nondist.symbols
+ Found extension, extension = .NONDIST.dat   trailing words                                                                                                                                                                                                                                   
+ Found prompt, prompt = nondist>                                                                                                                                                                                                                                                        
+ Found new symbol, symbol = nsumt                                                                                                                                                                                                                                                           
+ Found new symbol, symbol = ncoeffs                                                                                                                                                                                                                                                         
+
+setup_symbols_generic>  
+ Parsed           11  lines in nondist.symbols
+ Found            2  symbols 
+
+setup_symbols_generic> ndist not found, therefore nodistributions specified
+   1 nsumt       -1                                                          i
+   2 ncoeffs     1                                                           i
+
+setup_symbols_generic> Complete setup_symbol_generic
+
+setup_symbols_generic> -- symbols() have been setup
+ssg_ierr    0
+commands      1   257   271
+n      2     2     3    -1     1     5
+prompt      8 |nondist>|
+dataprompt     13 ||
+dataprompttext ||
+extinp     12 |.NONDIST.dat   trail|
+   1   0 nsumt      |i|-1|-1|Number of configurations already accumulated|
+   2   0 ncoeffs    |i|1|1|no. of coefficients|
+=== generic noeol
+
+setup_symbols_generic>  command passed in: noeol
+
+setup_symbols_generic>  command passed in: noeol                                                                                                                                                                                                                                                           
+
+setup_symbols_generic> Processing noeol.symbols
+ Found extension, extension = .NOEOL.dat                                                                                                                                                                                                                                                      
+ Found prompt, prompt = noeol>                                                                                                                                                                                                                                                          
+ Found new symbol, symbol = a1                                                                                                                                                                                                                                                              
+
+setup_symbols_generic>  
+ Parsed            7  lines in noeol.symbols
+ Found            1  symbols 
+
+setup_symbols_generic> ndist not found, therefore nodistributions specified
+   1 a1          7                                                           i
+
+setup_symbols_generic> Complete setup_symbol_generic
+
+setup_symbols_generic> -- symbols() have been setup
+ssg_ierr    0
+commands      1   257   269
+n      1     1     2    -1     1     5
+prompt      6 |noeol>|
+dataprompt     13 ||
+dataprompttext ||
+extinp     10 |.NOEOL.dat|
+   1   0 a1         |i|7|7|no newline at the end|
+=== generic noprompt
+
+setup_symbols_generic>  command passed in: noprompt
+
+setup_symbols_generic>  command passed in: noprompt                                                                                                                                                                                                                                                        
+
+setup_symbols_generic> Processing noprompt.symbols
+ Found extension, extension = .X.dat                                                                                                                                                                                                                                                          
+ Found new symbol, symbol = a                                                                                                                                                                                                                                                               
+
+setup_symbols_generic>  
+ Parsed            6  lines in noprompt.symbols
+ Found            1  symbols 
+
+setup_symbols_generic>  
+ No prompt specified in file : noprompt.symbols
+
+setup_symbols_generic> Prompt is required.
+
+setup_symbols_generic> Exiting setup_symbol_generic
+ssg_ierr   -1
+commands      1   257   272
+n      0     0     0    -1     1     5
+prompt      6 ||
+dataprompt     13 ||
+dataprompttext ||
+extinp      6 |.X.dat|
+=== generic badprompt
+
+setup_symbols_generic>  command passed in: badprompt
+
+setup_symbols_generic>  command passed in: badprompt                                                                                                                                                                                                                                                       
+
+setup_symbols_generic> Processing badprompt.symbols
+ Found extension, extension = .X.dat                                                                                                                                                                                                                                                          
+ Found prompt, prompt = no greater than sign                                                                                                                                                                                                                                            
+
+setup_symbols_generic> Prompt must end in a > character
+
+setup_symbols_generic> Exiting
+ssg_ierr   -1
+commands      5     1     6
+n      0     0     0    -1     1     5
+prompt      0 |no greater than sign|
+dataprompt     13 ||
+dataprompttext ||
+extinp      6 |.X.dat|
+=== generic noext
+
+setup_symbols_generic>  command passed in: noext
+
+setup_symbols_generic>  command passed in: noext                                                                                                                                                                                                                                                           
+
+setup_symbols_generic> Processing noext.symbols
+ Found prompt, prompt = noext>                                                                                                                                                                                                                                                          
+ Found new symbol, symbol = a                                                                                                                                                                                                                                                               
+
+setup_symbols_generic>  
+ Parsed            6  lines in noext.symbols
+ Found            1  symbols 
+
+setup_symbols_generic>  
+ No extension specified in file : noext.symbols
+
+setup_symbols_generic> Extension is required.
+
+setup_symbols_generic> Exiting setup_symbol_generic
+ssg_ierr   -1
+commands      1   257   269
+n      0     0     0    -1     1     5
+prompt      6 |noext>|
+dataprompt     13 ||
+dataprompttext ||
+extinp      6 ||
+=== generic nodataprompt
+
+setup_symbols_generic>  command passed in: nodataprompt
+
+setup_symbols_generic>  command passed in: nodataprompt                                                                                                                                                                                                                                                    
+
+setup_symbols_generic> Processing nodataprompt.symbols
+ Found extension, extension = .X.dat                                                                                                                                                                                                                                                          
+ Found prompt, prompt = nodp>                                                                                                                                                                                                                                                           
+ Found new symbol, symbol = ndist                                                                                                                                                                                                                                                           
+
+setup_symbols_generic> Found ndist symbol, therefore allsymbols beyond this are part of each distribution.
+
+setup_symbols_generic>  
+ Parsed            7  lines in nodataprompt.symbols
+ Found            1  symbols 
+
+setup_symbols_generic>  
+ No dataprompt specified in file : nodataprompt.symbols
+
+setup_symbols_generic> If have set ndist then dataprompt is required.
+
+setup_symbols_generic> Exiting setup_symbol_generic
+ssg_ierr   -1
+commands      1   257   276
+n      0     0     1    -1     1     5
+prompt      5 |nodp>|
+dataprompt     13 ||
+dataprompttext ||
+extinp      6 |.X.dat|
+=== generic nodptext
+
+setup_symbols_generic>  command passed in: nodptext
+
+setup_symbols_generic>  command passed in: nodptext                                                                                                                                                                                                                                                        
+
+setup_symbols_generic> Processing nodptext.symbols
+ Found extension, extension = .X.dat                                                                                                                                                                                                                                                          
+ Found prompt, prompt = nodpt>                                                                                                                                                                                                                                                          
+ Found dataprompt, dataprompt = dist                                                                                                                                                                                                                                                            
+ Found new symbol, symbol = ndist                                                                                                                                                                                                                                                           
+
+setup_symbols_generic> Found ndist symbol, therefore allsymbols beyond this are part of each distribution.
+
+setup_symbols_generic>  
+ Parsed            8  lines in nodptext.symbols
+ Found            1  symbols 
+
+setup_symbols_generic>  
+ No dataprompttext specified in file : nodptext.symbols
+
+setup_symbols_generic> If have set ndist then dataprompttext is required.
+
+setup_symbols_generic> Exiting setup_symbol_generic
+ssg_ierr   -1
+commands      1   257   272
+n      0     0     1    -1     1     5
+prompt      6 |nodpt>|
+dataprompt      4 |dist|
+dataprompttext ||
+extinp      6 |.X.dat|
+=== generic blankinside
+
+setup_symbols_generic>  command passed in: blankinside
+
+setup_symbols_generic>  command passed in: blankinside                                                                                                                                                                                                                                                     
+
+setup_symbols_generic> Processing blankinside.symbols
+ Found extension, extension = .X.dat                                                                                                                                                                                                                                                          
+ Found prompt, prompt = blank>                                                                                                                                                                                                                                                          
+ Found new symbol, symbol = a                                                                                                                                                                                                                                                               
+
+setup_symbols_generic>  
+ Unrecognised value for symbol a           : blankinside.symbols  in line            3
+
+setup_symbols_generic> Exiting setup_symbol_generic
+ssg_ierr   -1
+commands      1   257   275
+n      0     0     0    -1     1     5
+prompt      6 |blank>|
+dataprompt      4 ||
+dataprompttext ||
+extinp      6 |.X.dat|
+=== generic badkey
+
+setup_symbols_generic>  command passed in: badkey
+
+setup_symbols_generic>  command passed in: badkey                                                                                                                                                                                                                                                          
+
+setup_symbols_generic> Processing badkey.symbols
+ Found extension, extension = .X.dat                                                                                                                                                                                                                                                          
+ Found prompt, prompt = badkey>                                                                                                                                                                                                                                                         
+ Found new symbol, symbol = abc                                                                                                                                                                                                                                                             
+
+setup_symbols_generic>  
+ Unrecognised value for symbol abc         : symbol_kind          in line            3
+
+setup_symbols_generic> Exiting setup_symbol_generic
+ssg_ierr   -1
+commands      2     1    11
+n      0     0     0    -1     1     5
+prompt      7 |badkey>|
+dataprompt      4 ||
+dataprompttext ||
+extinp      6 |.X.dat|
+=== generic eofinside
+
+setup_symbols_generic>  command passed in: eofinside
+
+setup_symbols_generic>  command passed in: eofinside                                                                                                                                                                                                                                                       
+
+setup_symbols_generic> Processing eofinside.symbols
+ Found extension, extension = .X.dat                                                                                                                                                                                                                                                          
+ Found prompt, prompt = eof>                                                                                                                                                                                                                                                            
+ Found new symbol, symbol = abc                                                                                                                                                                                                                                                             
+
+setup_symbols_generic>  
+ Unrecognised value for symbol abc         : eofinside.symbols    in line            3
+
+setup_symbols_generic> Exiting setup_symbol_generic
+ssg_ierr   -1
+commands      1   257   273
+n      0     0     0    -1     1     5
+prompt      4 |eof>|
+dataprompt      4 ||
+dataprompttext ||
+extinp      6 |.X.dat|
+=== generic nodefault
+
+setup_symbols_generic>  command passed in: nodefault
+
+setup_symbols_generic>  command passed in: nodefault                                                                                                                                                                                                                                                       
+
+setup_symbols_generic> Processing nodefault.symbols
+ Found extension, extension = .X.dat                                                                                                                                                                                                                                                          
+ Found prompt, prompt = nodef>                                                                                                                                                                                                                                                          
+ Found new symbol, symbol = abc                                                                                                                                                                                                                                                             
+
+setup_symbols_generic>  
+ No default found for symbol: abc        
+
+setup_symbols_generic> Exiting setup_symbol_generic
+ssg_ierr   -1
+commands      2     1    11
+n      0     0     0    -1     1     5
+prompt      6 |nodef>|
+dataprompt      4 ||
+dataprompttext ||
+extinp      6 |.X.dat|
+=== generic notype
+
+setup_symbols_generic>  command passed in: notype
+
+setup_symbols_generic>  command passed in: notype                                                                                                                                                                                                                                                          
+
+setup_symbols_generic> Processing notype.symbols
+ Found extension, extension = .X.dat                                                                                                                                                                                                                                                          
+ Found prompt, prompt = notype>                                                                                                                                                                                                                                                         
+ Found new symbol, symbol = abc                                                                                                                                                                                                                                                             
+
+setup_symbols_generic>  
+ No type found for symbol: abc        
+
+setup_symbols_generic> Exiting setup_symbol_generic
+ssg_ierr   -1
+commands      2     1    11
+n      0     0     0    -1     1     5
+prompt      7 |notype>|
+dataprompt      4 ||
+dataprompttext ||
+extinp      6 |.X.dat|
+=== generic notext
+
+setup_symbols_generic>  command passed in: notext
+
+setup_symbols_generic>  command passed in: notext                                                                                                                                                                                                                                                          
+
+setup_symbols_generic> Processing notext.symbols
+ Found extension, extension = .X.dat                                                                                                                                                                                                                                                          
+ Found prompt, prompt = notext>                                                                                                                                                                                                                                                         
+ Found new symbol, symbol = abc                                                                                                                                                                                                                                                             
+
+setup_symbols_generic>  
+ No text found for symbol: abc        
+
+setup_symbols_generic> Exiting setup_symbol_generic
+ssg_ierr   -1
+commands      2     1    14
+n      0     0     0    -1     1     5
+prompt      7 |notext>|
+dataprompt      4 ||
+dataprompttext ||
+extinp      6 |.X.dat|
+=== generic missing
+
+setup_symbols_generic>  command passed in: missing
+
+setup_symbols_generic>  command passed in: missing                                                                                                                                                                                                                                                         
+
+setup_symbols_generic> Problem reading file: missing.symbols
+
+setup_symbols_generic> Exiting setup_symbol_generic
+ssg_ierr   -1
+commands      1     1     7
+n      0     0     0    -1     1     5
+prompt      7 ||
+dataprompt      4 ||
+dataprompttext ||
+extinp      6 ||
+=== generic   good
+
+setup_symbols_generic>  command passed in: good
+
+setup_symbols_generic>  command passed in:   good                                                                                                                                                                                                                                                          
+
+setup_symbols_generic> Processing good.symbols
+ Found extension, extension = .NDIST_EXAMPLE.dat                                                                                                                                                                                                                                              
+ Found prompt, prompt = setup example>                                                                                                                                                                                                                                                  
+ Found dataprompt, dataprompt = ndist_example                                                                                                                                                                                                                                                   
+ Found dataprompttext, dataprompttext = ndist_example text, nice                                                                                                                                                                                                                                        
+ Found new symbol, symbol = fnameato                                                                                                                                                                                                                                                        
+ Found new symbol, symbol = averyverylongsymbolname                                                                                                                                                                                                                                         
+ Found new symbol, symbol = ndist                                                                                                                                                                                                                                                           
+
+setup_symbols_generic> Found ndist symbol, therefore allsymbols beyond this are part of each distribution.
+ Found new symbol, symbol = atom1                                                                                                                                                                                                                                                           
+ Found new symbol, symbol = rmin                                                                                                                                                                                                                                                            
+
+setup_symbols_generic>  
+ Parsed           30  lines in good.symbols
+ Found            5  symbols 
+   1 fnameato    <undefined>                                                 c
+   2 averyverylo 2.5    3.5                                                  r
+   3 ndist       3                                                           i
+   4 atom1       XXX                                                         c
+   5 rmin        2.0                                                         r
+
+setup_symbols_generic> Complete setup_symbol_generic
+
+setup_symbols_generic> -- symbols() have been setup
+ssg_ierr    0
+commands      1   257   268
+n      5     5     3     2     3     5
+prompt     14 |setup example>|
+dataprompt     13 |ndist_example|
+dataprompttext |ndist_example text, nice|
+extinp     18 |.NDIST_EXAMPLE.dat|
+   1   0 fnameato   |c|<undefined>|<undefined>|A nice description|
+   2   0 averyverylo|r|2.5    3.5|2.5    3.5|Text first, then type and default|
+   3   0 ndist      |i|3|3|Number of distributions/variable sets to calculate over|
+   4   0 atom1      |c|XXX|XXX|Atom1 label|
+   5   0 rmin       |r|2.0|2.0|Minimum distance|

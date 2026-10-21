@@ -1,0 +1,6 @@
+extension .X.dat
+prompt nodef>
+symbol abc
+symbol_type i
+symbol_text t
+symbol_text again

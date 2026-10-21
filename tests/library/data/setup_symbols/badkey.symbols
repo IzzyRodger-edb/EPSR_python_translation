@@ -1,0 +1,6 @@
+extension .X.dat
+prompt badkey>
+symbol abc
+symbol_default 1
+symbol_kind i
+symbol_text t
