@@ -1,0 +1,25 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "epsr26"
+version = "0.0.1"
+description = "Line-by-line Python translation of the EPSR26 Fortran suite"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+dependencies = ["numpy>=2"]
+
+[project.optional-dependencies]
+dev = ["pytest", "pexpect", "psutil", "ruff"]
+
+[project.scripts]
+epsrshell = "epsr26.shell.epsrshell:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/epsr26"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["slow: full validation runs (chain mode)"]
